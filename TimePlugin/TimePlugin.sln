@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimePlugin", "TimePlugin.csproj", "{668633CD-14DC-485B-B99A-4779C2358D76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winforms-chat", "..\winforms-chat\winforms-chat\winforms-chat.csproj", "{92992E71-23F6-4B98-9B19-028D8BDEA989}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Publish|Any CPU = Publish|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{668633CD-14DC-485B-B99A-4779C2358D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{668633CD-14DC-485B-B99A-4779C2358D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{668633CD-14DC-485B-B99A-4779C2358D76}.Publish|Any CPU.ActiveCfg = Release|Any CPU
+		{668633CD-14DC-485B-B99A-4779C2358D76}.Publish|Any CPU.Build.0 = Release|Any CPU
+		{668633CD-14DC-485B-B99A-4779C2358D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{668633CD-14DC-485B-B99A-4779C2358D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92992E71-23F6-4B98-9B19-028D8BDEA989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92992E71-23F6-4B98-9B19-028D8BDEA989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92992E71-23F6-4B98-9B19-028D8BDEA989}.Publish|Any CPU.ActiveCfg = Debug|Any CPU
+		{92992E71-23F6-4B98-9B19-028D8BDEA989}.Publish|Any CPU.Build.0 = Debug|Any CPU
+		{92992E71-23F6-4B98-9B19-028D8BDEA989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92992E71-23F6-4B98-9B19-028D8BDEA989}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B583F4A0-1EB0-48E6-95AB-F9733048023D}
+	EndGlobalSection
+EndGlobal
