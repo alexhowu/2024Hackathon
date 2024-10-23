@@ -56,11 +56,13 @@ async void Form_UserMessage(object sender, string message)
 {
     chatHistory.AddUserMessage(message);
     var chatResult = await chatCompletionService.GetChatMessageContentsAsync(chatHistory, openAIPromptExecutionSettings, kernel);
-    ((Form1)sender).AddMessage(chatResult.Last().ToString());
+
+    var text = chatResult.Last().ToString().Replace("\n", "\r\n");
+    ((Form1)sender).AddMessage(text);
 }
 void Form_Load(object? sender, EventArgs e)
 {
-    ((Form1)sender).AddMessage("Ask questions to use the Time Plugin such as: What time is it?");
+    ((Form1)sender).AddMessage("Ask questions here about your business?");
 }
 
 System.Windows.Forms.Application.Run(form);
