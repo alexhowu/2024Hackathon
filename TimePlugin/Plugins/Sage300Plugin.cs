@@ -77,7 +77,7 @@ public class Sage300Plugin
     [KernelFunction, Description("Retrieves all inventory item related information from Sage 300.")]
     public async Task<string> GetICItemsAsync([Description("ODataQueryOptions object to find only select fields of UnformattedItemNumber Description QuantityOnPurchaseOrder QuantityOnSalesOrder QuantityAvailable")] string oDataQueryOptions)
     {
-        var authenticationString = $"ADMIN:Admin123!";
+        var authenticationString = $"ADMIN:As159357.";
         var base64EncodedAuthenticationString = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(authenticationString));
         //var base64EncodedAuthenticationString = Convert.ToBase64String(Encoding.ASCII.GetBytes("ADMIN:As159357."));
 
