@@ -23,7 +23,7 @@ public class Sage300Plugin
     {
         //var authenticationString = $"ADMIN:Admin123!";
         //var base64EncodedAuthenticationString = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(authenticationString));
-        var base64EncodedAuthenticationString = "QURNSU46QWRtaW4xMjMh";
+        var base64EncodedAuthenticationString = Convert.ToBase64String(Encoding.ASCII.GetBytes("ADMIN:As159357."));
 
         var url = "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AP/APAccountSets" +
             (string.IsNullOrEmpty(oDataQueryOptions) ? string.Empty : $"?{oDataQueryOptions}");
@@ -40,9 +40,9 @@ public class Sage300Plugin
     public async Task<string> GetReceiptAsync(
         [Description("ODataQueryOptions object to find and search for customer (CustomerNumber) information and only select fields of CustomerNumber ReceiptDate CustomerReceiptAmount")] string oDataQueryOptions)
     {
-        //var authenticationString = $"ADMIN:Admin123!";
-        //var base64EncodedAuthenticationString = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(authenticationString));
-        var base64EncodedAuthenticationString = "QURNSU46QWRtaW4xMjMh";
+        var authenticationString = $"ADMIN:Admin123!";
+        var base64EncodedAuthenticationString = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(authenticationString));
+        //var base64EncodedAuthenticationString = Convert.ToBase64String(Encoding.ASCII.GetBytes("ADMIN:As159357."));
 
         var url = "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARPostedReceipts" +
             (string.IsNullOrEmpty(oDataQueryOptions) ? string.Empty : $"?{oDataQueryOptions}");
@@ -59,9 +59,9 @@ public class Sage300Plugin
     public async Task<string> GetAllReceiptAsync(
         [Description("ODataQueryOptions object to find only select fields of CustomerNumber ReceiptDate CustomerReceiptAmount")] string oDataQueryOptions)
     {
-        //var authenticationString = $"ADMIN:Admin123!";
-        //var base64EncodedAuthenticationString = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(authenticationString));
-        var base64EncodedAuthenticationString = "QURNSU46QWRtaW4xMjMh";
+        var authenticationString = $"ADMIN:Admin123!";
+        var base64EncodedAuthenticationString = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(authenticationString));
+        //var base64EncodedAuthenticationString = Convert.ToBase64String(Encoding.ASCII.GetBytes("ADMIN:As159357."));
 
         var url = "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/AR/ARPostedReceipts" +
             (string.IsNullOrEmpty(oDataQueryOptions) ? string.Empty : $"?{oDataQueryOptions}");
@@ -74,5 +74,21 @@ public class Sage300Plugin
         return stringContent;
     }
 
+    [KernelFunction, Description("Retrieves all inventory item related information from Sage 300.")]
+    public async Task<string> GetICItemsAsync([Description("ODataQueryOptions object to find only select fields of UnformattedItemNumber Description QuantityOnPurchaseOrder QuantityOnSalesOrder QuantityAvailable")] string oDataQueryOptions)
+    {
+        var authenticationString = $"ADMIN:Admin123!";
+        var base64EncodedAuthenticationString = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(authenticationString));
+        //var base64EncodedAuthenticationString = Convert.ToBase64String(Encoding.ASCII.GetBytes("ADMIN:As159357."));
 
+        var url = "http://localhost/Sage300WebApi/v1.0/-/SAMLTD/IC/ICItems" +
+                        (string.IsNullOrEmpty(oDataQueryOptions) ? string.Empty : $"?{oDataQueryOptions}");
+        var httpClient = new HttpClient();
+        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", base64EncodedAuthenticationString);
+
+        var response = await httpClient.GetAsync(new Uri(url));
+        var stringContent = await response.Content.ReadAsStringAsync();
+
+        return stringContent;
+    }
 }
